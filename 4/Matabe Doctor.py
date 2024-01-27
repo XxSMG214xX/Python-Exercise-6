@@ -11,7 +11,6 @@ class Hospital :
     def __init__(self) :
         self.patients = {}
         self.schedule = {}
-    
     def add_patient(self,id,name,family_name,age,height,weight) :
         if id in self.patients :
             return 'error: this ID already exists'
@@ -25,14 +24,12 @@ class Hospital :
             new_patient = Patient(id,name,family_name,age,height,weight)
             self.patients[id] = new_patient
             return 'patient added successfully'
-
     def display_patient(self,id) : 
         if id not in self.patients : 
             return 'error: invalid ID'
         else : 
             patient = self.patients[id]
             return f'patient name: {patient.name}\npatient family name: {patient.family_name}\npatient age: {patient.age}\npatient height: {patient.height}\npatient weight: {patient.weight}'
-    
     def visit(self,id,beginning_time) :
         if id not in self.patients :
             return 'error: invalid id'
@@ -44,7 +41,6 @@ class Hospital :
             self.schedule[beginning_time] = id
             self.patients[id].visits.append(beginning_time)
             return 'visit added successfully!'
-    
     def delete_patient(self,id) :
         if id not in self.patients :
             return 'error: invalid id'
@@ -54,19 +50,14 @@ class Hospital :
                 if patient_id == id :
                     del self.schedule[time]
             return 'patient deleted successfully!'
-
     def display_visits(self) :
         sorted_schedule = self.schedule.items()
         ans = "SCHEDULE:\n"
-
         for time , patient_id in sorted_schedule :
             patient = self.patients[patient_id]
             ans += f"{time:d}:00 {patient.name} {patient.family_name}\n"
-
         return ans.strip()
     
-
-
 
 hospital = Hospital()
 command = input()
@@ -75,10 +66,8 @@ command_split = (command_strip.split())
 while command_split[0] != "exit" or len(command_split) == 0: 
     if command_split[0] == "add" and command_split[1] == "patient" :
         answer = hospital.add_patient(int(command_split[2]), command_split[3], command_split[4], int(command_split[5]), int(command_split[6]), int(command_split[7]))
-
     elif command_split[0] == "add" and command_split[1] == "visit" :
         answer = hospital.visit(int(command_split[2]),int(command_split[3]))
-
     elif command_split[0] == "display" and command_split[1] == "visit":
         answer = hospital.display_visits()
     elif command_split[0] == "display" and command_split[1] == "patient":
@@ -95,9 +84,3 @@ while command_split[0] != "exit" or len(command_split) == 0:
         command = 'lsjdnfk'
     command_strip = command.strip()
     command_split = (command_strip.split())
-
-        
-
-
-
-        
