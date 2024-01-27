@@ -10,8 +10,5 @@ for i in range(n) :
         if demo[0] not in duplicate :
             main = demo[0][1:]
             duplicate[main] = True
-        
-
 for j in sorted(duplicate) :
         print(j)
-
