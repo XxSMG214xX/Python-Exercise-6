@@ -1,6 +1,5 @@
 class Soldier:
     sold = []
-
     def __init__(self, sold_t, sold_id, x, y):
         self.sold_t = sold_t
         self.sold_id = sold_id
@@ -8,7 +7,6 @@ class Soldier:
         self.x = x
         self.y = y
         Soldier.sold.append(self.sold_id)
-
 class Melee(Soldier):
     def __init__(self, sold_id, x, y):
         super().__init__("melee", sold_id, x, y)
@@ -103,20 +101,17 @@ class Game:
         print(f"location:  {sold.x}   {sold.y}") 
         self.invalidswitch_turn()
         return
-
     def who_is_in_lead(self):
         score = {0: 0, 1: 0}
         for player, soldiers in self.players.items():
             for sold in soldiers:
                 score[player] += sold.health
-
         if score[0] > score[1]:
             print("player  1")
         elif score[0] < score[1]:
             print("player  2")
         else:
             print("draw")
-
     def find_soldier(self, sold_id):
         for soldiers_list in self.positions[self.current_turn].values():
             for sold in soldiers_list:
