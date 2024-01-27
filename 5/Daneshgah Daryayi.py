@@ -24,9 +24,6 @@ class MainApp:
         self.poin = 0
         self.users = {}
         self.commands = []
-
-
-
     def log_in(self, user_id, password):
         if user_id not in self.users.keys():
             print("incorrect id")
@@ -41,10 +38,6 @@ class MainApp:
         elif isinstance(user, Professor):
             print("logged in successfully!\nentered professor menu")
             self.professor_menu(user)
-
-
-
-
     def sign_up(self, user_type, user_id, name, password):
         if user_type!="S" and user_type!= "P":
             print("invalid type")
@@ -123,7 +116,6 @@ class MainApp:
         print("course list:")
         for course in self.courses.values():
             print(f"{course.course_id} {course.name} {len(course.current_students)}/{course.capacity}")
-
     def get_course(self, student, course_id):
         if course_id not in self.courses:
             print("incorrect course id")
