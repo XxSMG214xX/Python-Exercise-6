@@ -1,6 +1,5 @@
 def binary(n) :
     return "{0:b}".format(int(n))
-
 a=int(input())
 b=int(input())
 dif = 0
@@ -14,7 +13,6 @@ fin1 = fin1 + bin1
 for i in range((1000)-len(bin2)):
     fin2 = fin2 + '0'
 fin2 = fin2 + bin2
-
 for i in range(1000) :
     if fin1[i] != fin2[i] :
         dif = dif + 1
