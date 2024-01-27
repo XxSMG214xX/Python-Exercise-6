@@ -1,11 +1,12 @@
 def isprime(n) :
     if n < 2 :
-        return False
-        
+        return False 
     for i in range(2,int(n**0.5)+1) :
         if n % i == 0 :
             return False
     return True
+
+
 
 
 a, b = [int(a) for a in input().split()]
@@ -17,7 +18,6 @@ if a == b :
     else :
         print('main order - amount: 0')
         exit()
-
 if a < b :
     order = True
 else :
