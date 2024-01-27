@@ -7,8 +7,6 @@ def binary(n) :
     for i in range(32-len(number)):
         number = '0' + number
     return number
-
-
 num1 = int(input())
 num2 = int(input())
 part1 = ''
