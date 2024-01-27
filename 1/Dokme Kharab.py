@@ -3,9 +3,7 @@ def jaam(a,b):
         carryover = a & b
         a = a ^ b
         b = carryover << 1
-    return a
-
-    
+    return a  
 n = int(input())
 m = int(input())
 k = int(input())
