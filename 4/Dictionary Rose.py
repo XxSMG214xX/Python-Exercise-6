@@ -2,27 +2,18 @@ class RoseDictionary :
     
     def __init__(self , ini_data = None):
         self.data = ini_data or {}
-    
     def __setitem__(self,key,value):
         self.data[key] = value
-
     def __delitem__(self, key):
         del self.data[key]
-
     def __getitem__(self,key):
         return self.data[key]
-
     def keys(self) : 
         return list(self.data.keys())
-    
     def values(self) :
-        return list(self.data.values())
-    
+        return list(self.data.values()
     def items(self) :
         return list(self.data.items())
-    
-
-    
     def pop_item(self, raise_error = None , error_msg = None , default = None ):
         n = len(self.keys()) - 1
         if n == -1:
@@ -44,9 +35,6 @@ class RoseDictionary :
             key = self.keys()[n]
             self.__delitem__(key)
             return value
-        
-
-
     def get_item(self, key, raise_error= None, error_msg= None, default= None):
         try:
             return self.data[key]
