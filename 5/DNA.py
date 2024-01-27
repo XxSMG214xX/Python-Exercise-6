@@ -1,15 +1,12 @@
 class AghayeKharchang :
     def __init__(self,dna) :
         self.dna = dna
-
     def dna_mod(self) :
         self.dna = self.dna.replace('tt','o')
         return self.dna
-    
 class Octapus :
     def __init__(self,dna) :
         self.dna = dna
-    
     def r_triplets(self) :
         new_dna = ""
         counter = 0
@@ -17,7 +14,6 @@ class Octapus :
         i = 0        
         while i < len(self.dna):
             if self.dna[i] == 'x' and counter == 0 :
-                
                 counter += 1
                 j = i
             while (i + 3 < len(self.dna)) and (self.dna[i] == self.dna[i + 1]) and (self.dna[i]==self.dna[i+2]):
@@ -32,10 +28,8 @@ class Octapus :
 class Bob_Esfanji :
     def __init__(self,dna) :
         self.dna = dna
-    
     def merge_sort(self,arr) :
         if len(arr) > 1 :
-
             mid = len(arr)//2
             sub_array_r = arr[:mid]
             sub_array_l = arr[mid:]
@@ -56,7 +50,6 @@ class Bob_Esfanji :
                 arr[k] = sub_array_r[i]
                 i += 1
                 k += 1
-
             while j < len(sub_array_l) :
                 arr[k] = sub_array_l[j]
                 j += 1
@@ -65,11 +58,9 @@ class Bob_Esfanji :
         for kn in range(len(arr)) :
             n += int(arr[kn]) * (10**(len(arr) - kn -1))
         return n
-             
     def sort_dna(self) :
         sorted_dna = self.merge_sort(self.dna)
         return sorted_dna
-
 
 def main() :
     inp = input().strip()
@@ -96,8 +87,5 @@ def main() :
         print(octapus.r_triplets())
     else :
         print('invalid input')
-
-
-
 if __name__ == "__main__":
     main()
